@@ -1,0 +1,10 @@
+.*
+*.map
+*.spec.*
+dist/*.css
+.nyc_output/
+.vscode/
+coverage/
+src/
+tsconfig.json
+tslint.json
