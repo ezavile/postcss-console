@@ -1,0 +1,80 @@
+{
+  "name": "postcss-console",
+  "version": "0.1.0",
+  "description": "A PostCSS plugin to output messages to the terminal.",
+  "main": "dist/plugin.js",
+  "scripts": {
+    "copyFakeStyle": "cpx \"src/*.css\" dist/",
+    "clean": "rimraf dist coverage *.log",
+    "compile": "npm run clean && tsc",
+    "compile:watch": "tsc --watch",
+    "lint": "npm run tslint \"src/*.ts\"",
+    "test": "nyc ava",
+    "test:watch": "npm run copyFakeStyle && ava --watch",
+    "tslint": "tslint --project tsconfig.json",
+    "precommit": "npm test",
+    "pretest": "npm run lint && npm run compile && npm run copyFakeStyle",
+    "report-coverage": "codecov -f coverage/lcov.info"
+  },
+  "repository": "git@github.com:ezavile/postcss-console",
+  "author": "ezavile <ezavile@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "postcss",
+    "postcss-plugin",
+    "console",
+    "debug",
+    "log",
+    "terminal"
+  ],
+  "bugs": {
+    "url": "https://github.com/ezavile/postcss-console/issues"
+  },
+  "homepage": "https://github.com/ezavile/postcss-console",
+  "ava": {
+    "files": [
+      "dist/*.spec.js"
+    ],
+    "source": [
+      "dist/*.js"
+    ]
+  },
+  "nyc": {
+    "lines": 100,
+    "statements": 100,
+    "functions": 100,
+    "branches": 100,
+    "include": [
+      "dist/*.js"
+    ],
+    "exclude": [
+      "dist/*.spec.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "cache": true,
+    "all": true,
+    "check-coverage": true
+  },
+  "devDependencies": {
+    "@types/core-js": "0.9.41",
+    "@types/node": "7.0.22",
+    "ava": "0.19.1",
+    "codecov": "2.2.0",
+    "core-js": "2.4.1",
+    "cpx": "1.5.0",
+    "husky": "0.13.3",
+    "nyc": "10.3.2",
+    "postcss-each": "0.10.0",
+    "postcss-text-transform": "2.0.0",
+    "rimraf": "2.6.1",
+    "tslint": "5.1.0",
+    "typescript": "2.3.3"
+  },
+  "dependencies": {
+    "colors": "1.1.2",
+    "postcss": "6.0.1"
+  }
+}
