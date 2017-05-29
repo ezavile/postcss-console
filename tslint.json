@@ -35,7 +35,7 @@
     "no-bitwise": true,
     "no-conditional-assignment": true,
     "no-console": [
-      true,
+      false,
       "log",
       "debug",
       "info",
@@ -47,7 +47,7 @@
     "no-debugger": true,
     "no-duplicate-variable": true,
     "no-empty": false,
-    "no-eval": true,
+    "no-eval": false,
     "no-null-keyword": false,
     "no-shadowed-variable": true,
     "no-string-literal": false,
