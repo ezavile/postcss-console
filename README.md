@@ -17,11 +17,11 @@ What is this? For example, you have the following CSS file (I'm using [postcss-e
 **backgrounds.css**
 ```css
 .u {
-  @console.warn Here comes the postcss-console;
+  @console.warn Here comes the postcss-console plugin;
   @each $color in green, yellow, red {
     @console.assert '$color' == 'green';
     @text-transform $color, upperFirst, $colorTransformed {
-      @console.log $colorTransformed;
+      @console.log the text was transformed from $color to $colorTransformed;
       &-bg$(colorTransformed) {
         background-color: $color;
       }
@@ -39,8 +39,11 @@ And the plugin will give you:
 ## Usage
 
 ### JavaScript
+Put this plugin after all plugins
+
 ```javascript
 postcss([
+   require('other-plugin'),
    require('postcss-console')
 ]);
 ```
