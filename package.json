@@ -1,6 +1,6 @@
 {
   "name": "postcss-console",
-  "version": "0.0.0-development",
+  "version": "0.1.0",
   "description": "A PostCSS plugin to output messages to the terminal.",
   "main": "dist/plugin.js",
   "scripts": {
