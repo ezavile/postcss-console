@@ -16,7 +16,7 @@ What is this? For example, you have the following CSS file (I'm using [postcss-e
 
 **backgrounds.css**
 ```css
-..u {
+.u {
   @console.warn Here comes the postcss-console;
   @each $color in green, yellow, red {
     @console.assert '$color' == 'green';
@@ -33,6 +33,7 @@ What is this? For example, you have the following CSS file (I'm using [postcss-e
 ```
 
 And the plugin will give you:
+
 ![console](/console.png?raw=true "Messages on terminal")
 
 ## Usage
@@ -46,7 +47,7 @@ postcss([
 
 ## TypeScript
 ```js
-import * as postcssConsole from 'postcss-console;
+import * as postcssConsole from 'postcss-console';
 
 postcss([ postcssConsole() ]);
 ```
