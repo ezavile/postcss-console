@@ -1,3 +1,5 @@
+[DEPRECATED] - Use [@postcss-plugins/console](https://github.com/ezavile/postcss-plugins/tree/master/packages/console) instead
+
 # postcss-console
 
 [![Travis](https://img.shields.io/travis/ezavile/postcss-console.svg?style=flat-square)](https://travis-ci.org/ezavile/postcss-console)
